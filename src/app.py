@@ -37,7 +37,8 @@ def home():
         'video_demo': 'video/demo.mp4',
         'screenshots': [
             'img/hero.png',
-            'img/arena1.png'
+            'img/arena1.png',
+            'img/healthBar'
         ],
         'pdf' : 'pdfs/GDD.pdf'
     }
