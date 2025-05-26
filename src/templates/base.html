@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ game.title if game else 'Game Website' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <header class="title-section">
+    <div class="overlay"></div>
+    <div class="container logo-container">
+      {%- if game.title_img -%}
+        <div class="title-wrapper" style="background: url('{{ url_for('static', filename=game.background_img) }}') center/cover no-repeat;">
+          <img src="{{ url_for('static', filename=game.title_img) }}" alt="{{ game.title }} Logo" class="title-logo">
+        </div>
+      {%- else -%}
+        <h1>{{ game.title }}</h1>
+      {%- endif -%}
+      <p>{{ game.tagline }}</p>
+    </div>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="container">
+    <p>&copy; 2025 Ashes : DH2650 </p>
+  </footer>
+</body>
+</html>
